@@ -4,7 +4,7 @@ export const site = {
   instagram: "https://www.instagram.com/silvathifannyvitoriapereira/",
   bio: "Thifanny Vitória é uma escritora independente, amante da leitura e apaixonada pela criação de histórias. Entre livros, música e a companhia de sua cachorrinha Kiara, encontra inspiração para imaginar novos universos. Escrever, para ela, é uma forma de expressão e liberdade — um gesto feito por amor, com tudo o que há em seu coração.",
   phrase: "Toda história começa quando alguém abre uma porta.",
-  description: "Biblioteca digital autoral para histórias que merecem ser habitadas.",
+  description: "Descubra histórias de Thifanny Vitória para ler online ou baixar em PDF e EPUB.",
 } as const;
 
 export interface Book {

@@ -4,7 +4,22 @@ export function generateStaticParams(){return books.map(({slug})=>({slug}))}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params;
   const book=books.find((item)=>item.slug===slug);
-  return book?{title:book.title,description:book.description,openGraph:{images:[book.cover]}}:{title:"Obra não encontrada"};
+  return book?{
+    title: book.title,
+    description: book.description,
+    openGraph: {
+      type: "book",
+      title: `${book.title} — ${book.author}`,
+      description: book.description,
+      images: [{ url: book.cover, width: 1200, height: 1800, alt: `Capa de ${book.title}, de ${book.author}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${book.title} — ${book.author}`,
+      description: book.description,
+      images: [book.cover],
+    },
+  }:{title:"Obra não encontrada"};
 }
 
 export default async function BookPage({params}:{params:Promise<{slug:string}>}){
